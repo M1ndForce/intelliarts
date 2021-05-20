@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-const { purchaseItem } = require("../services/purchase.services");
+const { report } = require("../services/report.services");
 
-router.post("/purchase", async (req, res) => {
+router.get("/report", async (req, res) => {
   try {
-    await purchaseItem(req, res);
+    await report(req, res);
   } catch (e) {
     console.log(e);
   }

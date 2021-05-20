@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 
 const snackRouts = require("./routs/snacks");
 const purchaseRouts = require("./routs/purchases");
+const reportRouts = require("./routs/reports");
 const config = require("./config/config");
 const text = require("./const/text");
 
@@ -26,6 +27,7 @@ app.use(express.json());
 
 app.use("/", snackRouts);
 app.use("/", purchaseRouts);
+app.use("/", reportRouts);
 
 app.listen(config.PORT, () => {
   console.log(`${text.LISTEN_URL}${config.PORT}`);
