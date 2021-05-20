@@ -5,16 +5,18 @@ const app = express();
 const bodyParser = require("body-parser");
 
 const snackRouts = require("./routs/snacks");
-const port = 3000;
+const config = require("./config/config");
+const text = require("./const/text");
 
+mongoose.set("useFindAndModify", false);
+mongoose.set("returnOriginal", false);
 mongoose
-  .connect("mongodb://localhost/snacks", {
+  .connect(config.URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to DB! all right!!!!"))
+  .then(() => console.log(text.DB_MESSAGE))
   .catch((error) => console.log(error.message));
-mongoose.set("useFindAndModify", false);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -23,6 +25,6 @@ app.use(express.json());
 
 app.use("/", snackRouts);
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.listen(config.PORT, () => {
+  console.log(`${text.LISTEN_URL}${config.PORT}`);
 });
