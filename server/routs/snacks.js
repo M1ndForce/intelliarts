@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const snacksSchema = require("../models/Snacks");
+const { addItem, addcategory } = require("../services/snack.services");
 
 router.get("/", (req, res) => {
   res.send("Hello World!");
@@ -9,10 +9,7 @@ router.get("/", (req, res) => {
 
 router.post("/addcategory", async (req, res) => {
   try {
-    const snackData = req.body;
-    const snacks = await new snacksSchema(snackData).save();
-
-    res.json(snacks);
+    await addcategory(req, res);
   } catch (e) {
     console.log(e);
   }
@@ -20,15 +17,7 @@ router.post("/addcategory", async (req, res) => {
 
 router.put("/additem", async (req, res) => {
   try {
-    const snackRequestData = req.body;
-    const previousCount = await snacksSchema.findOne({
-      name: `${snackRequestData?.name}`,
-    });
-    const snacks = await snacksSchema.findOneAndUpdate(
-      { name: `${snackRequestData?.name}` },
-      { count: previousCount?.count + snackRequestData?.count }
-    );
-    res.json(snacks);
+    await addItem(req, res);
   } catch (e) {
     console.log(e);
   }
