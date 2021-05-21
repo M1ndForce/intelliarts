@@ -4,9 +4,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-const snackRouts = require("./routs/snacks");
-const purchaseRouts = require("./routs/purchases");
-const reportRouts = require("./routs/reports");
+const snackRouts = require("./routs/snacksRouter");
+const purchaseRouts = require("./routs/purchasesRouter");
+const reportRouts = require("./routs/reportsRouter");
 const config = require("./config/config");
 const text = require("./const/text");
 

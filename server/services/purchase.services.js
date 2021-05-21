@@ -1,23 +1,17 @@
-const purchaseSchema = require("../models/Purchases");
-const snacksSchema = require("../models/Snacks");
-const text = require("../const/text");
+const purchaseModel = require("../models/Purchases");
+const snacksModel = require("../models/Snacks");
 
 class PurchaseServices {
-  async purchaseItem(req, res) {
-    const purchaseData = req?.body;
-    const snack = await snacksSchema.findOne({
-      name: `${purchaseData?.name}`,
-    });
-    if (snack?.count > 0) {
-      const purchase = await new purchaseSchema(purchaseData).save();
-      await snacksSchema.findOneAndUpdate(
-        { name: `${purchaseData?.name}` },
-        { count: snack?.count - 1 }
-      );
-      res.json(purchase);
-    } else if (snack?.count === 0) {
-      res.json({ name: text.NO_ITEMS });
-    }
+  async getCategoryRecordFromDB(purchaseData) {
+    return snacksModel.findOne(purchaseData);
+  }
+
+  async savePurchaseRecordToDB(purchaseData) {
+    return new purchaseModel(purchaseData).save();
+  }
+
+  async updateSnackCountInCategory(purchaseData, snackCount) {
+    await snacksModel.findOneAndUpdate(purchaseData, snackCount);
   }
 }
 
