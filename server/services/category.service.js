@@ -1,22 +1,14 @@
 const snacksSchema = require("../models/Category");
 
 class CategoryService {
-  async addItem(req, res) {
-    const snackRequestData = req.body;
-    const previousCount = await snacksSchema.findOne({
-      name: `${snackRequestData?.name}`,
-    });
-    const snacks = await snacksSchema.findOneAndUpdate(
-      { name: `${snackRequestData?.name}` },
-      { count: previousCount?.count + snackRequestData?.count }
-    );
-    res.json(snacks);
+  async findCategory(data) {
+    return snacksSchema.findOne(data);
   }
-  async addcategory(req, res) {
-    const snackData = req.body;
-    const snacks = await new snacksSchema(snackData).save();
-
-    res.json(snacks);
+  async updateItemsLeft(name, count) {
+    return snacksSchema.findOneAndUpdate(name, count);
+  }
+  async addcategory(data) {
+    return new snacksSchema(data).save();
   }
 }
 
