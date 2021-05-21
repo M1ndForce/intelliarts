@@ -1,14 +1,14 @@
-const snacksSchema = require("../models/Category");
+const categoryModel = require("../models/Category");
 
 class CategoryService {
   async findCategory(data) {
-    return snacksSchema.findOne(data);
+    return categoryModel.findOne(data);
   }
   async updateItemsLeft(name, count) {
-    return snacksSchema.findOneAndUpdate(name, count);
+    return categoryModel.findOneAndUpdate(name, count);
   }
   async addcategory(data) {
-    return new snacksSchema(data).save();
+    return new categoryModel(data).save();
   }
 }
 

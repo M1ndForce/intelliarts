@@ -5,7 +5,7 @@ const purchaseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  date: Date,
+  date: String,
 });
 
 module.exports = mongoose.model("Purchases", purchaseSchema);
