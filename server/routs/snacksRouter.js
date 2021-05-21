@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const { addItem, addcategory } = require("../services/snack.services");
+const { addItem, addcategory } = require("../services/snack.service");
 
 router.get("/", (req, res) => {
   res.send("Hello World!");

@@ -1,7 +1,7 @@
 const purchaseModel = require("../models/Purchases");
 const snacksModel = require("../models/Snacks");
 
-class PurchaseServices {
+class PurchaseService {
   async getCategoryRecordFromDB(purchaseData) {
     return snacksModel.findOne(purchaseData);
   }
@@ -15,4 +15,4 @@ class PurchaseServices {
   }
 }
 
-module.exports = new PurchaseServices();
+module.exports = new PurchaseService();

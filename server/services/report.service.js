@@ -1,6 +1,6 @@
 const purchaseSchema = require("../models/Purchases");
 
-class reportServices {
+class reportService {
   async reportMonth(req, res) {
     const requestedDate = new Date(req?.body?.date);
     const response = await purchaseSchema
@@ -21,4 +21,4 @@ class reportServices {
   }
 }
 
-module.exports = new reportServices();
+module.exports = new reportService();

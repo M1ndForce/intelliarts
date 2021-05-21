@@ -4,7 +4,7 @@ const {
   getCategoryRecordFromDB,
   savePurchaseRecordToDB,
   updateSnackCountInCategory,
-} = require("../../services/purchase.services");
+} = require("../../services/purchase.service");
 
 module.exports = async (req, res) => {
   try {

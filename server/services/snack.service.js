@@ -1,6 +1,6 @@
 const snacksSchema = require("../models/Snacks");
 
-class SnackServices {
+class SnackService {
   async addItem(req, res) {
     const snackRequestData = req.body;
     const previousCount = await snacksSchema.findOne({
@@ -20,4 +20,4 @@ class SnackServices {
   }
 }
 
-module.exports = new SnackServices();
+module.exports = new SnackService();
