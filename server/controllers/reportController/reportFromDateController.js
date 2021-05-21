@@ -1,8 +1,14 @@
-const { reportFromDate } = require("../../services/report.service");
+const { getAllReportsSortedByDate } = require("../../services/report.service");
 
 module.exports = async (req, res) => {
   try {
-    await reportFromDate(req, res);
+    const reportsArr = await getAllReportsSortedByDate({
+      name: req?.body?.name,
+    });
+    const result = reportsArr.filter(
+      (item) => item.date >= `${req?.body?.date}`
+    );
+    res.json(result);
   } catch (e) {
     console.log(e);
   }
