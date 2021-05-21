@@ -4,9 +4,9 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 
-const snackRouts = require("./routs/categoryRouter");
-const purchaseRouts = require("./routs/purchasesRouter");
-const reportRouts = require("./routs/reportsRouter");
+const categoryRouts = require("./routes/categoryRouter");
+const purchaseRouts = require("./routes/purchasesRouter");
+const reportRouts = require("./routes/reportsRouter");
 const config = require("./config/config");
 const text = require("./const/text");
 
@@ -25,7 +25,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", snackRouts);
+app.use("/", categoryRouts);
 app.use("/", purchaseRouts);
 app.use("/", reportRouts);
 
