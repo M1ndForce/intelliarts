@@ -1,4 +1,4 @@
-const purchaseSchema = require("../models/Purchases");
+const purchaseSchema = require("../models/Purchase");
 
 class reportService {
   async reportMonth(req, res) {

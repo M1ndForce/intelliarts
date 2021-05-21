@@ -1,5 +1,5 @@
-const purchaseModel = require("../models/Purchases");
-const snacksModel = require("../models/Snacks");
+const purchaseModel = require("../models/Purchase");
+const snacksModel = require("../models/Category");
 
 class PurchaseService {
   async getCategoryRecordFromDB(purchaseData) {
