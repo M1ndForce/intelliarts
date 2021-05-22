@@ -14,8 +14,14 @@ module.exports = async (getCategoryPriceByName, result) => {
     calculatedTotalReport.push({
       name: key,
       soldItemsCount: value,
+      price: item.price,
       totalPrice: item.price * value,
     });
   }
+
+  const totalSoldItemPrice = calculatedTotalReport.reduce((acc, i) => {
+    return acc + i.totalPrice;
+  }, 0);
+  calculatedTotalReport.push({ totalPriceSum: totalSoldItemPrice });
   return calculatedTotalReport;
 };

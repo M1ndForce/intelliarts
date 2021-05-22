@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const text = require("../const/text");
 
 const snacksSchema = new mongoose.Schema({
   name: {
@@ -15,4 +16,4 @@ const snacksSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Snacks", snacksSchema);
+module.exports = mongoose.model(text.SNACKS, snacksSchema);

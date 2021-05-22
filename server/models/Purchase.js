@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const text = require("../const/text");
 
 const purchaseSchema = new mongoose.Schema({
   name: {
@@ -8,4 +9,4 @@ const purchaseSchema = new mongoose.Schema({
   date: String,
 });
 
-module.exports = mongoose.model("Purchases", purchaseSchema);
+module.exports = mongoose.model(text.PURCHASES, purchaseSchema);
