@@ -4,8 +4,8 @@ const {
   getCategoryRecordFromDB,
   savePurchaseRecordToDB,
   updateSnackCountInCategory,
+  getCategoryPriceByName,
 } = require("../../services/purchase.service");
-const { getCategoryPriceByName } = require("../../services/report.service");
 
 module.exports = async (req, res) => {
   try {

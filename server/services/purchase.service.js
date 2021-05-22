@@ -1,9 +1,9 @@
 const purchaseModel = require("../models/Purchase");
-const snacksModel = require("../models/Category");
+const categoryModel = require("../models/Category");
 
 class PurchaseService {
   async getCategoryRecordFromDB(purchaseData) {
-    return snacksModel.findOne(purchaseData);
+    return categoryModel.findOne(purchaseData);
   }
 
   async savePurchaseRecordToDB(purchaseData) {
@@ -11,7 +11,11 @@ class PurchaseService {
   }
 
   async updateSnackCountInCategory(purchaseData, snackCount) {
-    await snacksModel.findOneAndUpdate(purchaseData, snackCount);
+    await categoryModel.findOneAndUpdate(purchaseData, snackCount);
+  }
+
+  async getCategoryPriceByName(data) {
+    return categoryModel.findOne(data);
   }
 }
 
