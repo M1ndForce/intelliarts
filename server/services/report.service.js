@@ -1,8 +1,12 @@
-const purchaseSchema = require("../models/Purchase");
+const purchaseModel = require("../models/Purchase");
+const categoryModel = require("../models/Category");
 
 class reportService {
-  async getAllReportsSortedByDate(data) {
-    return purchaseSchema.find(data).sort({ date: -1 });
+  async getAllReportsSortedByDate() {
+    return purchaseModel.find().sort({ date: -1 });
+  }
+  async getCategoryPriceByName(data) {
+    return categoryModel.findOne(data);
   }
 }
 
