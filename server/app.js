@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const categoryRouts = require("./routes/categoryRouter");
 const purchaseRouts = require("./routes/purchasesRouter");
 const reportRouts = require("./routes/reportsRouter");
+const listRouts = require("./routes/listRouter");
 const config = require("./config/config");
 const text = require("./const/text");
 
@@ -28,6 +29,7 @@ app.use(express.json());
 app.use("/", categoryRouts);
 app.use("/", purchaseRouts);
 app.use("/", reportRouts);
+app.use("/", listRouts);
 
 app.listen(config.PORT, () => {
   console.log(`${text.LISTEN_URL}${config.PORT}`);
