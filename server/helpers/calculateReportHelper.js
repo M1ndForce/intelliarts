@@ -14,8 +14,8 @@ module.exports = async (getCategoryPriceByName, result) => {
     calculatedTotalReport.push({
       name: key,
       soldItemsCount: value,
-      price: item.price,
-      totalPrice: item.price * value,
+      price: item?.price,
+      totalPrice: item?.price * value,
     });
   }
 
