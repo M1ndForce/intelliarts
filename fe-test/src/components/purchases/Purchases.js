@@ -33,7 +33,6 @@ const AddPurchase = () => {
         date: date,
       })
       .then((res) => {
-        console.log(res.data);
         setToggle(true);
         setName("");
         setDate("");

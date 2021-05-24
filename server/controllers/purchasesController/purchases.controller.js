@@ -10,7 +10,6 @@ class PurchasesController {
   async createPurchase(req, res) {
     try {
       const item = await getCategoryPriceByName({ name: req.body?.name });
-      console.log(item);
       if (!item) {
         throw new Error("No item for purchase");
       }
