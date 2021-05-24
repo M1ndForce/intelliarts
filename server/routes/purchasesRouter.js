@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { purchasesController } = require("../controllers/index");
+const {
+  purchasesController: { createPurchase },
+} = require("../controllers/index");
 
-router.post("/", purchasesController.createPurchase);
+router.post("/", createPurchase);
 
 module.exports = router;

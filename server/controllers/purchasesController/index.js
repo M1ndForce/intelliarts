@@ -1,1 +1,1 @@
-module.exports.createPurchase = require('./purchasesController');
+module.exports = require('./purchases.controller');

@@ -4,7 +4,9 @@ const {
   updateItemsLeft,
   findAndDeleteWhereCountZero,
   findAndReturnItemsWhereCountZero,
+  findAllCategories,
 } = require("../../services/category.service");
+const sortByItemsLeft = require("../../helpers/listHelper");
 
 class CategoryController {
   async addCategory(req, res) {
@@ -64,6 +66,15 @@ class CategoryController {
         message: e.message,
         statusCode: 404,
       });
+    }
+  }
+  async listOfCategories(req, res) {
+    try {
+      const allCategories = await findAllCategories();
+      const result = sortByItemsLeft(allCategories);
+      res.json(result);
+    } catch (e) {
+      console.log(e);
     }
   }
 }

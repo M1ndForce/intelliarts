@@ -16,6 +16,9 @@ class CategoryService {
   async findAndReturnItemsWhereCountZero(){
     return categoryModel.find({ count: 0 });
   }
+  async findAllCategories (){
+    return categoryModel.find()
+  }
 }
 
 module.exports = new CategoryService();
