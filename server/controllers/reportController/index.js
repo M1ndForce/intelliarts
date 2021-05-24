@@ -1,2 +1,1 @@
-module.exports.createReport = require('./reportMonthController');
-module.exports.createReportFromDate = require('./reportFromDateController');
+module.exports = require("./report.controller");
