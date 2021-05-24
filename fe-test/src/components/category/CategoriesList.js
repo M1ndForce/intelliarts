@@ -9,7 +9,6 @@ const CategoriesList = () => {
 
   const addItemBtnHandler = (e) => {
     axios.get("/categories").then((res) => {
-      console.log(res.data);
       setData(res.data);
     });
     e.preventDefault();

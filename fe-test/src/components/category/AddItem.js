@@ -28,14 +28,12 @@ const AddItem = () => {
   }
 
   const addItemBtnHandler = (e) => {
-    debugger;
     axios
       .put("/categories", {
         name: name,
         count: +count,
       })
       .then((res) => {
-        console.log(res.data);
         setToggle(true);
         setName("");
         setCount("");

@@ -10,7 +10,6 @@ const CategoriesClear = () => {
 
   const addItemBtnHandler = (e) => {
     axios.delete("/categories").then((res) => {
-      console.log(res.data);
       if (res?.data?.message) {
         setError(res?.data?.message);
       } else {
