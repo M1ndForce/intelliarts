@@ -4,6 +4,7 @@ import AddItem from "./components/category/AddItem";
 import CategoriesList from "./components/category/CategoriesList";
 import CategoriesClear from "./components/category/ClearCategory";
 import AddPurchase from "./components/purchases/Purchases";
+import CreateReport from "./components/reports/CreateReport";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <AddPurchase />
       <CategoriesList />
       <CategoriesClear />
+      <CreateReport />
     </div>
   );
 }
