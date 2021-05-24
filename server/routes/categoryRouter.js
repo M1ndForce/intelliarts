@@ -1,10 +1,11 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
 
-const { categoryController } = require("../controllers/index");
+const {
+  categoryController: { addCategory, clearCategory, updateCategory },
+} = require("../controllers");
 
-router.post("/category", categoryController.addCategory);
-
-router.put("/category", categoryController.updateCategory);
+router.post("/", addCategory);
+router.put("/", updateCategory);
+router.delete("/", clearCategory);
 
 module.exports = router;

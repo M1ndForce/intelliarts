@@ -22,13 +22,12 @@ mongoose
   .then(() => console.log(text.DB_MESSAGE))
   .catch((error) => console.log(error.message));
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", categoryRouts);
-app.use("/", purchaseRouts);
+app.use("/categories", categoryRouts);
+app.use("/purchases", purchaseRouts);
 app.use("/", reportRouts);
 app.use("/", listRouts);
 app.use("/", clearRouts);
