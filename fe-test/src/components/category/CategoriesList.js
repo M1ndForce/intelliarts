@@ -15,7 +15,7 @@ const CategoriesList = () => {
   };
 
   return (
-    <div>
+    <div className="child">
       <Button text={"List"} onclick={addItemBtnHandler} />
       {data.map((e) => {
         return (

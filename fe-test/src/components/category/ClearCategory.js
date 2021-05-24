@@ -21,7 +21,7 @@ const CategoriesClear = () => {
   };
 
   return (
-    <div>
+    <div className="child">
       <Button text={"Clear"} onclick={addItemBtnHandler} />
       {error ? (
         <li>{error}</li>

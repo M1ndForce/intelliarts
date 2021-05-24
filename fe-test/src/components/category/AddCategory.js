@@ -54,7 +54,7 @@ const AddCategory = () => {
   };
 
   return (
-    <div>
+    <div className="child">
       {toggle ? (
         <h2>
           {response?.name} {response?.price} {response?.count} {error}

@@ -49,7 +49,7 @@ const AddItem = () => {
   };
 
   return (
-    <div>
+    <div className="child">
       {toggle ? (
         <h2>
           {response?.name} {response?.count} {error}

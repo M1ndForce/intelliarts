@@ -12,9 +12,10 @@ function App() {
       <AddCategory />
       <AddItem />
       <AddPurchase />
+      <CreateReport name={"ReportForMonth"} rout={"/report?date="} />
+      <CreateReport name={"ReportFromDate"} rout={"reportfromdate?date="} />
       <CategoriesList />
       <CategoriesClear />
-      <CreateReport />
     </div>
   );
 }

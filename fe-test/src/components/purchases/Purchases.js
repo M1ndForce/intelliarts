@@ -48,7 +48,7 @@ const AddPurchase = () => {
   };
 
   return (
-    <div>
+    <div className="child">
       {toggle ? (
         <h2>
           {response?.name} {response?.price} {error}

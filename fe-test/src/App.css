@@ -1,6 +1,7 @@
 .App {
   display: flex;
   flex-wrap: wrap;
+  flex-grow: 4;
   margin-top: 50px;
   margin-left: 50px;
 }
