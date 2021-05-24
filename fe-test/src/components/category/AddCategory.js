@@ -34,22 +34,18 @@ const AddCategory = () => {
     axios
       .post("/categories", {
         name: name,
-        price: price,
-        count: count,
+        price: +price,
+        count: +count,
       })
       .then((res) => {
-        console.log(res.data);
+        setName("");
+        setPrice("");
+        setCount("");
         setToggle(true);
         if (res?.data?.name) {
-          setName("");
-          setPrice("");
-          setCount("");
           setResponse(res.data);
           setTimeout(changeToggleToFalse, 5000);
         } else {
-          setName("");
-          setPrice("");
-          setCount("");
           setError(res?.data.message);
           setTimeout(changeToggleToFalse, 5000);
         }
