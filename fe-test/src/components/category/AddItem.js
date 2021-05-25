@@ -10,8 +10,8 @@ const AddItem = () => {
   const [name, setName] = useState("");
   const [count, setCount] = useState("");
   const [toggle, setToggle] = useState(false);
-  const [error, setError] = useState(null);
-  const [response, setResponse] = useState(null);
+  const [error, setError] = useState("");
+  const [response, setResponse] = useState("");
 
   function inputOnchangeHandler(e) {
     if (e.target.id === "itemName") {
@@ -22,8 +22,8 @@ const AddItem = () => {
     }
   }
   function changeToggleToFalse() {
-    setError(null);
-    setResponse(null);
+    setError("");
+    setResponse("");
     return setToggle(false);
   }
 
@@ -52,7 +52,7 @@ const AddItem = () => {
     <div className="child">
       {toggle ? (
         <h2>
-          {response?.name} {response?.count} {error}
+          {response?.name} {response?.price} {response?.count} {error}
         </h2>
       ) : null}
       <Input

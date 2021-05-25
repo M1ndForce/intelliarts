@@ -6,16 +6,16 @@ import Input from "../input/Input";
 const CreateReport = ({ rout, name }) => {
   axios.defaults.baseURL = "http://localhost:5000";
   const [data, setData] = useState([]);
-  const [date, setDate] = useState(null);
-  const [error, setError] = useState(null);
-  const [toggle, setToggle] = useState(null);
+  const [date, setDate] = useState("");
+  const [error, setError] = useState("");
+  const [toggle, setToggle] = useState("");
 
   function inputOnchangeHandler(e) {
     setDate(e.target.value);
   }
 
   function changeToggleToFalse() {
-    setError(null);
+    setError("");
     return setToggle(false);
   }
 
@@ -41,7 +41,7 @@ const CreateReport = ({ rout, name }) => {
       <Input
         text={"DATE"}
         value={date}
-        id={"dateForReport"}
+        id={name}
         onChange={inputOnchangeHandler}
       />
       <Button text={name} onclick={addItemBtnHandler} />
