@@ -51,7 +51,7 @@ const AddPurchase = () => {
     <div className="child">
       {toggle ? (
         <h2>
-          {response?.name} {response?.price} {error}
+          {response?.date} {response?.name} {response?.price} {error}
         </h2>
       ) : null}
       <Input
@@ -66,7 +66,7 @@ const AddPurchase = () => {
         id={"date"}
         onChange={inputOnchangeHandler}
       />
-      <Button text={"AddPurchase"} onclick={addItemBtnHandler} />
+      <Button text={"purchase"} onclick={addItemBtnHandler} />
     </div>
   );
 };
